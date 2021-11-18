@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.24.0",
     "cheerio": "^1.0.0-rc.10",
-    "puppeteer": "^11.0.0"
+    "puppeteer": "^11.0.0",
+    "util": "^0.12.4"
   }
 }

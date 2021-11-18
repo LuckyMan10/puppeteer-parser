@@ -1,5 +1,5 @@
 const cheerio = require("cheerio");
-const puppeteer = require("./helpers/puppeteer");
+const puppeteer = require("./helpers/pageChecker");
 const urls = require("./urlData");
 
 async function main(pageUrls) {

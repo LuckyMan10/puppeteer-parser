@@ -1,8 +1,8 @@
 const fs = require("fs");
-const path = require('path');
-const productScraper = requrie('./productScraper');
+const path = require("path");
+const productScraper = require("./productScraper");
 
-function urlsSaver(data, page) {
+async function urlsSaver(data, page) {
   try {
     let productsCategory = data.page
       .split("/")
@@ -13,6 +13,9 @@ function urlsSaver(data, page) {
       Category: productsCategory,
       urls: productsUrls,
     };
+    console.log("Начинаю собирать информацию о продуктах...");
+    await productScraper.scraper(jsonObj, page);
+    /*
     if (!fs.existsSync(path.join(__dirname, '..', 'data', productsCategory))) {
       fs.mkdirSync(path.join(__dirname, '..', 'data', productsCategory));
     }
@@ -33,6 +36,7 @@ function urlsSaver(data, page) {
         );
       }
     );
+    */
   } catch (e) {
     throw e;
   }

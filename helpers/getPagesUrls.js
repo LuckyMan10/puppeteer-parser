@@ -70,7 +70,7 @@ async function startChecker(urls, browser) {
       console.log(`checking was done.`);
       console.log("result: ", value);
       console.log("saving...");
-      saver.urlsSaver(value, page);
+      await saver.urlsSaver(value, page);
     }
   } catch (e) {
     throw e;
